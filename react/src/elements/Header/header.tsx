@@ -5,8 +5,9 @@ import { Button } from "../Button/Button";
 import { HeaderContainer } from "./styles";
 
 export const Header = () => {
-  const { logout } = useContext(LoginContext);
+  const { logout, getUser } = useContext(LoginContext);
   const navigate = useNavigate();
+  const user = getUser();
 
   const handleClickLogout = () => {
     logout();
@@ -15,6 +16,7 @@ export const Header = () => {
 
   return (
     <HeaderContainer>
+      <h3>{user ? `Bem vindo ${user.name}` : ""}</h3>
       <Button value="logout" width="100" onClick={handleClickLogout}></Button>
     </HeaderContainer>
   );

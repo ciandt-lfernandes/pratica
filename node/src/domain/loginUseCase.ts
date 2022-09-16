@@ -1,8 +1,9 @@
 import { ILogin } from "./interfaces/login";
+import { User } from "./interfaces/user";
 
-export const autenthicate = (login: ILogin): boolean => {
+export const autenthicate = (login: ILogin): User => {
   if (login.email === "admin" && login.password === "admin") {
-    return true;
+    return { name: "Luiz", email: "admin@admin.com" };
   }
-  return false;
+  return undefined;
 };

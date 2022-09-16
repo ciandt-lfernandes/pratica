@@ -17,8 +17,8 @@ export const Login = () => {
 
   const handleClick = async () => {
     try {
-      await loginService(email, password);
-      login();
+      const user = await loginService(email, password);
+      login(user);
       navigate("/home");
     } catch (error) {
       alert("Não autorizado");

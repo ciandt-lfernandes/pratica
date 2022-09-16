@@ -5,8 +5,9 @@ import { autenthicate } from "../domain/loginUseCase";
 const login = Router();
 
 login.post("/login", (req, res) => {
-  if (autenthicate(req.body as ILogin)) {
-    res.sendStatus(200);
+  const user = autenthicate(req.body as ILogin);
+  if (user) {
+    res.send(user).status(200);
   }
   res.sendStatus(401);
 });
