@@ -1,0 +1,11 @@
+{
+  "name": "pratica",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "concurrently": "^7.4.0"
+  },
+  "scripts": {
+    "start":  "concurrently \"npm run start --prefix ./react\" \"npm run start --prefix ./node\""
+  }
+}
