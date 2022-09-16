@@ -1,4 +1,4 @@
-import { ButtonContainer, InputButton } from "./styled";
+import { ButtonContainer, InputButton } from "./styles";
 
 interface Props {
   value: string;
