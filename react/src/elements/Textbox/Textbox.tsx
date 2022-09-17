@@ -1,4 +1,4 @@
-import { Banana as Input, TextBoxContainer } from "./styles";
+import { InputStyled, TextBoxContainer } from "./styles";
 import "./styles.ts";
 
 interface ITextbox {
@@ -21,7 +21,7 @@ export const Textbox = ({
   return (
     <TextBoxContainer>
       <label htmlFor={id}>{label}</label>
-      <Input
+      <InputStyled
         id={id}
         type={type}
         placeholder={placeholder}

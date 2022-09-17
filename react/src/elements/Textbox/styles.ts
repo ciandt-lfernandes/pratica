@@ -6,7 +6,7 @@ export const TextBoxContainer = styled.div`
   justify-content: flex-end;
 `;
 
-export const Banana = styled.input`
+export const InputStyled = styled.input`
   border-radius: 15px;
   border: 0.1px solid;
   padding: 15px;
