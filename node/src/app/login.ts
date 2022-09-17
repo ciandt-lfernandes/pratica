@@ -4,10 +4,10 @@ import { autenthicate } from "../domain/loginUseCase";
 
 const login = Router();
 
-login.post("/login", (req, res) => {
-  const user = autenthicate(req.body as ILogin);
+login.post("/login", async (req, res) => {
+  const user = await autenthicate(req.body as ILogin);
   if (user) {
-    res.send(user).status(200);
+    res.json(user).status(200);
   }
   res.sendStatus(401);
 });
