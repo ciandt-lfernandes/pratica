@@ -3,9 +3,15 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "concurrently": "^7.4.0"
+    "concurrently": "^7.4.0",
+    "submodules-install": "^1.0.2"
   },
   "scripts": {
-    "start":  "concurrently \"npm run start --prefix ./react\" \"npm run start --prefix ./node\""
-  }
+    "start": "concurrently \"npm run start --prefix ./react\" \"npm run start --prefix ./node\"",
+    "postinstall": "submodules-install"
+  },
+  "submodules": [
+    "node/**",
+    "react/**"
+  ]
 }
