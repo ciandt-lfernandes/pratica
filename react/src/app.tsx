@@ -1,7 +1,7 @@
 import { Navigate, Route, Routes } from "react-router";
 import { BrowserRouter } from "react-router-dom";
-import { Home } from "./pages/Home/home";
-import { Login } from "./pages/Login/Login";
+import { Home } from "./pages/Home/home.page";
+import { Login } from "./pages/Login/login.page";
 import { PrivateRoute } from "./routes/private.route";
 
 export const App = () => {
