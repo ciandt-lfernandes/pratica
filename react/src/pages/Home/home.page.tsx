@@ -7,14 +7,14 @@ import { HomeContainer } from "./styles";
 export const Home = () => {
   const navigate = useNavigate();
   const handleClick = () => {
-    navigate("/chart");
+    navigate("/cart");
   };
 
   return (
     <HomeContainer>
       <Header />
       <ProductList />
-      <Button value={"Go to chart"} onClick={handleClick} />
+      <Button value={"Go to cart"} onClick={handleClick} />
     </HomeContainer>
   );
 };

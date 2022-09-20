@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from "react";
-import ChartContext from "../../../contexts/Login/chart.context";
+import CartContext from "../../../contexts/Cart/cart.context";
 import { ProductDomain } from "../../../domain/product";
 import { listAllproducts } from "../../../services/products/listAllProducts.service";
 import { Box } from "../../atoms/Box/Box";
@@ -9,7 +9,7 @@ import { ProductListContainer } from "./styles";
 
 export const ProductList = () => {
   const [products, setProducts] = useState<ProductDomain[]>([]);
-  const { addChart } = useContext(ChartContext);
+  const { addCart } = useContext(CartContext);
 
   const loadProducts = async () => {
     setProducts(await listAllproducts());
@@ -22,9 +22,9 @@ export const ProductList = () => {
   return (
     <ProductListContainer>
       {products.map((p) => (
-        <Box key={p.name}>
+        <Box width="30" key={p.name}>
           <Product product={p} />
-          <Button value="+" onClick={() => addChart(p)} />
+          <Button value="+" onClick={() => addCart(p)} />
         </Box>
       ))}
     </ProductListContainer>

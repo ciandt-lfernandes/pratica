@@ -1,21 +1,21 @@
 import { useNavigate } from "react-router";
 import { Button } from "../../components/atoms/Button/Button";
 import { Header } from "../../components/molecules/Header/header";
-import { ChartList } from "../../components/organisms/ChartList/chartList";
-import { ChartContainer } from "./styles";
+import { CartList } from "../../components/organisms/ChartList/cartList";
+import { CartContainer } from "./styles";
 
-export const Chart = () => {
+export const Cart = () => {
   const navigate = useNavigate();
   const handleClick = () => {
     navigate("/home");
   };
 
   return (
-    <ChartContainer>
+    <CartContainer>
       <Header />
-      <ChartList />
+      <CartList />
 
       <Button value={"Go to home"} onClick={handleClick} />
-    </ChartContainer>
+    </CartContainer>
   );
 };

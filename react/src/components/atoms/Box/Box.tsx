@@ -2,8 +2,9 @@ import { BoxContainer } from "./styles";
 
 interface Props {
   children: JSX.Element[] | JSX.Element;
+  width?: string;
 }
 
-export const Box = ({ children }: Props) => {
-  return <BoxContainer>{children}</BoxContainer>;
+export const Box = ({ children, width }: Props) => {
+  return <BoxContainer width={width}>{children}</BoxContainer>;
 };

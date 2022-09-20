@@ -1,3 +1,6 @@
 import styled from "styled-components";
 
-export const ChartListContainer = styled.div``;
+export const CartListContainer = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+`;

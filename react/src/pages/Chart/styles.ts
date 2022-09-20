@@ -1,3 +1,3 @@
 import styled from "styled-components";
 
-export const ChartContainer = styled.div``;
+export const CartContainer = styled.div``;
