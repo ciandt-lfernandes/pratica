@@ -1,6 +1,6 @@
+import { GetUserByEmail } from "./interfaces/gateways/user.gateway";
 import { ILogin } from "./interfaces/login";
 import { User } from "./interfaces/user";
-import { GetUserByEmail } from "./interfaces/user.gateway";
 import { userMapper } from "./mappers/user.mapper";
 
 export interface IDependencies {

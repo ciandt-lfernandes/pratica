@@ -1,4 +1,4 @@
-import { GetUserByEmail } from "../../domain/interfaces/user.gateway";
+import { GetUserByEmail } from "../../domain/interfaces/gateways/user.gateway";
 import { connectMongo } from "../connect.mongoose";
 import { userMapper } from "../mappers/user.mapper";
 

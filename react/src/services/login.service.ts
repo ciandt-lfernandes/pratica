@@ -10,7 +10,6 @@ export const loginService = async (
       email,
       password,
     });
-    console.log("nao logou");
     return { name: data.name, email: data.email };
   } catch (error) {
     console.error(error);
