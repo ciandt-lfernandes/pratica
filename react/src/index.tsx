@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { App } from "./app";
+import { ChartProvider } from "./contexts/Login/chart.context";
 import { LoginProvider } from "./contexts/Login/login.context";
 import "./index.css";
 
@@ -10,8 +11,10 @@ const root = ReactDOM.createRoot(
 
 root.render(
   <React.StrictMode>
-    <LoginProvider>
-      <App />
-    </LoginProvider>
+    <ChartProvider>
+      <LoginProvider>
+        <App />
+      </LoginProvider>
+    </ChartProvider>
   </React.StrictMode>
 );

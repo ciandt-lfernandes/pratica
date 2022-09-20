@@ -5,12 +5,14 @@ interface IProps {
 }
 
 export const ButtonContainer = styled.div`
+  display: flex;
+  justify-content: center;
   padding: 5px;
 `;
 
 export const InputButton = styled.input<IProps>`
    {
-    width: ${(props) => (props.width ? props.width : 0)}%;
+    ${(props) => (props.width ? "width:" + props.width : "")}%;
     background-image: linear-gradient(#f7f8fa, #e7e9ec);
     border-color: #adb1b8 #a2a6ac #8d9096;
     border-style: solid;
