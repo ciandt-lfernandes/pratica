@@ -1,12 +1,12 @@
-import { Header } from "../../elements/Header/header";
-import { ListaProdutos } from "../Produtos/ListaProdutos/listaprodutos";
+import { Header } from "../../components/molecules/Header/header";
+import { ProductList } from "../../components/organisms/ProductList/productList";
 import { HomeContainer } from "./styles";
 
 export const Home = () => {
   return (
     <HomeContainer>
       <Header />
-      <ListaProdutos />
+      <ProductList />
     </HomeContainer>
   );
 };

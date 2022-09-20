@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { useNavigate } from "react-router";
-import LoginContext from "../../contexts/Login/login.context";
-import { Button } from "../Button/Button";
+import LoginContext from "../../../contexts/Login/login.context";
+import { Button } from "../../atoms/Button/Button";
 import { HeaderContainer } from "./styles";
 
 export const Header = () => {

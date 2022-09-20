@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
 import { ProductDomain } from "../../../domain/product";
-import { Box } from "../../../elements/Box/Box";
 import { listAllproducts } from "../../../services/products/listAllProducts.service";
-import { Product } from "../Produto/product";
-import { ListaProdutosContainer } from "./styles";
+import { Box } from "../../atoms/Box/Box";
+import { Product } from "../../molecules/Produto/product";
+import { ProductListContainer } from "./styles";
 
-export const ListaProdutos = () => {
+export const ProductList = () => {
   const [products, setProducts] = useState<ProductDomain[]>([]);
 
   const loadProducts = async () => {
@@ -17,12 +17,12 @@ export const ListaProdutos = () => {
   }, []);
 
   return (
-    <ListaProdutosContainer>
+    <ProductListContainer>
       {products.map((p) => (
         <Box key={p.name}>
           <Product product={p} />
         </Box>
       ))}
-    </ListaProdutosContainer>
+    </ProductListContainer>
   );
 };

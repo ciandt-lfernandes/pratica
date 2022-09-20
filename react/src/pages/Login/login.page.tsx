@@ -1,9 +1,9 @@
 import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import LoginContext from "../../contexts/Login/login.context";
-import { Box } from "../../elements/Box/Box";
-import { Button } from "../../elements/Button/Button";
-import { Textbox } from "../../elements/Textbox/Textbox";
+import { Box } from "../../components/atoms/Box/Box";
+import { Button } from "../../components/atoms/Button/Button";
+import { Textbox } from "../../components/atoms/Textbox/Textbox";
 import { loginService } from "../../services/login.service";
 import { LoginContainer } from "./styles";
 import "./styles.ts";
