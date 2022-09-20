@@ -10,7 +10,7 @@ export const getUserByEmail: GetUserByEmail = async (emailParameter) => {
     const result = await userModel.findOne({ email: emailParameter });
     return userMapper(result);
   } catch (error) {
-    console.log(error);
+    console.error(error);
     throw error;
   }
 };
