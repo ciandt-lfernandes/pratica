@@ -1,6 +1,6 @@
 import Axios from "axios";
 import { ProductDomain } from "../../domain/product";
-import { productMapper } from "../../domain/product.mapper";
+import { productMapper } from "../../domain/mappers/product.mapper";
 
 export const listAllproducts = async () => {
   try {
