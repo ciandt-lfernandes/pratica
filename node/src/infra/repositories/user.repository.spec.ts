@@ -21,4 +21,10 @@ describe("user repository unit test", () => {
 
     expect(userModel).toBeNull();
   });
+  test("Should return null when email is null", async () => {
+    mockFindOne.mockResolvedValue(null);
+    const userModel = await getUserByEmail(null);
+
+    expect(userModel).toBeNull();
+  });
 });
