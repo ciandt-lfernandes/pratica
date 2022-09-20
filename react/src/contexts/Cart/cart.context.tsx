@@ -1,22 +1,30 @@
 import { createContext, useState } from "react";
-import { ProductDomain } from "../../domain/product";
+import { v4 as uuidv4 } from "uuid";
+import { ProductCart } from "../../domain/product";
 
 export interface Context {
-  addCart: (product: ProductDomain) => void;
-  getCart: () => ProductDomain[];
+  addToCart: (product: ProductCart) => void;
+  removeFromCart: (product: ProductCart) => void;
+  getCart: () => ProductCart[];
 }
 const CartContext = createContext<Context>({} as Context);
 
 export const CartProvider = ({ children }: any) => {
-  const [cart, setCart] = useState<ProductDomain[]>([]);
+  const [cart, setCart] = useState<ProductCart[]>([]);
 
-  const addToCart = (product: ProductDomain) => setCart([...cart, product]);
-  const removeFromCart = (product: ProductDomain) =>
-    setCart([...cart, product]);
-  const getCart = () => cart;
+  const addToCart = (product: ProductCart) => {
+    setCart([...cart, { ...product, idCart: uuidv4() }]);
+  };
+
+  const removeFromCart = (product: ProductCart) =>
+    setCart(cart.filter((p) => p.idCart !== product.idCart));
+
+  const getCart = () => {
+    return cart;
+  };
 
   return (
-    <CartContext.Provider value={{ addCart: addToCart, getCart }}>
+    <CartContext.Provider value={{ addToCart, getCart, removeFromCart }}>
       {children}
     </CartContext.Provider>
   );

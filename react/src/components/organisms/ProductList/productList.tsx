@@ -9,7 +9,7 @@ import { ProductListContainer } from "./styles";
 
 export const ProductList = () => {
   const [products, setProducts] = useState<ProductDomain[]>([]);
-  const { addCart } = useContext(CartContext);
+  const { addToCart } = useContext(CartContext);
 
   const loadProducts = async () => {
     setProducts(await listAllproducts());
@@ -24,7 +24,7 @@ export const ProductList = () => {
       {products.map((p) => (
         <Box width="30" key={p.name}>
           <Product product={p} />
-          <Button value="+" onClick={() => addCart(p)} />
+          <Button value="+" onClick={() => addToCart(p)} />
         </Box>
       ))}
     </ProductListContainer>

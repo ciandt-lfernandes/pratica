@@ -4,6 +4,7 @@ import { ProductEntity } from "../repositories/schema/product.schema";
 const productMapper = (product: ProductEntity): ProductModel => {
   if (product) {
     return {
+      id: product._id,
       name: product.name,
       image: product.image,
       price: product.price,
