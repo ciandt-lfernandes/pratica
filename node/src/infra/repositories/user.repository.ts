@@ -8,7 +8,7 @@ connectMongo();
 export const getUserByEmail: GetUserByEmail = async (emailParameter) => {
   try {
     const result = await userModel.findOne({ email: emailParameter });
-    return userMapper(result);
+    return result ? userMapper(result) : null;
   } catch (error) {
     console.log(error);
   }

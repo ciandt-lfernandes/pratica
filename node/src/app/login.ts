@@ -9,8 +9,9 @@ route.post("/login", async (req, res) => {
   const user = await autenthicate({ getUserByEmail }, req.body as ILogin);
   if (user) {
     res.json(user).status(200);
+  } else {
+    res.sendStatus(401);
   }
-  res.sendStatus(401);
 });
 
 export { route as login };
