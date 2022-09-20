@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { Navigate, Route, Routes } from "react-router";
 import { BrowserRouter } from "react-router-dom";
 import LoginContext from "./contexts/Login/login.context";
+import { Chart } from "./pages/Chart/chart.page";
 import { Home } from "./pages/Home/home.page";
 import { Login } from "./pages/Login/login.page";
 
@@ -25,6 +26,14 @@ export const App = () => {
           element={
             <PrivateRoute>
               <Home />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/chart"
+          element={
+            <PrivateRoute>
+              <Chart />
             </PrivateRoute>
           }
         />
