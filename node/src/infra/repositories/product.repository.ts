@@ -10,7 +10,7 @@ export const getAllProductsRepository: GetAllProducts = async () => {
     const result = await productModel.find({});
     return result.map((p) => productMapper(p._doc));
   } catch (error) {
-    // console.log(error);
+    console.log(error);
     throw error;
   }
 };
