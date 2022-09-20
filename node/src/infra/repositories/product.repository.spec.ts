@@ -21,4 +21,13 @@ describe("product repository unit test", () => {
 
     expect(productModel).toStrictEqual([]);
   });
+  test("Should throw an exception when find fails", async () => {
+    mockFind.mockRejectedValue(new Error());
+    expect.assertions(1);
+    try {
+      await getAllProductsRepository();
+    } catch (error) {
+      expect(error).toBeDefined();
+    }
+  });
 });

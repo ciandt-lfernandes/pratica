@@ -11,5 +11,6 @@ export const getUserByEmail: GetUserByEmail = async (emailParameter) => {
     return userMapper(result);
   } catch (error) {
     console.log(error);
+    throw error;
   }
 };

@@ -27,4 +27,13 @@ describe("user repository unit test", () => {
 
     expect(userModel).toBeNull();
   });
+  test("Should throw an exception when find fails", async () => {
+    mockFindOne.mockRejectedValue(new Error());
+    expect.assertions(1);
+    try {
+      await getUserByEmail(null);
+    } catch (error) {
+      expect(error).toBeDefined();
+    }
+  });
 });
