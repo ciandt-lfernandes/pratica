@@ -1,5 +1,5 @@
 import { GetAllProducts } from "../../domain/product/product.gateway";
-import { connectMongo } from "../connect.mongoose";
+import { connectMongo } from "./connect.mongoose";
 import { productMapper } from "../mappers/product.mapper";
 
 const productModel = require("./schema/product.schema");

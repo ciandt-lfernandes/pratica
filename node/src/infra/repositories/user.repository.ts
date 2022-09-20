@@ -1,5 +1,5 @@
 import { GetUserByEmail } from "../../domain/user/user.gateway";
-import { connectMongo } from "../connect.mongoose";
+import { connectMongo } from "./connect.mongoose";
 import { userMapper } from "../mappers/user.mapper";
 
 const userModel = require("./schema/user.schema");
