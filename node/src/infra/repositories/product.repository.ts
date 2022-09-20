@@ -1,8 +1,8 @@
-import { GetAllProducts } from "../../domain/interfaces/gateways/product.gateway";
+import { GetAllProducts } from "../../domain/product/product.gateway";
 import { connectMongo } from "../connect.mongoose";
 import { productMapper } from "../mappers/product.mapper";
 
-const productModel = require("../schema/product.schema");
+const productModel = require("./schema/product.schema");
 connectMongo();
 
 export const getAllProductsRepository: GetAllProducts = async () => {

@@ -1,6 +1,6 @@
-import { GetAllProducts } from "./interfaces/gateways/product.gateway";
-import { Product } from "./interfaces/product";
-import { productMapper } from "./mappers/product.mapper";
+import { GetAllProducts } from "./product.gateway";
+import { IProduct } from "./product";
+import { productMapper } from "./product.mapper";
 
 export interface IDependencies {
   repository: GetAllProducts;
@@ -8,7 +8,7 @@ export interface IDependencies {
 
 export const allProducts = async (
   dependencies: IDependencies
-): Promise<Array<Product>> => {
+): Promise<Array<IProduct>> => {
   const { repository: getAllProducts } = dependencies;
 
   const products = await getAllProducts();

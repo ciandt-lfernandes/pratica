@@ -1,7 +1,7 @@
 import { ProductModel } from "../../infra/interfaces/product.model";
-import { Product } from "../interfaces/product";
+import { IProduct } from "./product";
 
-export const productMapper = (productModel: ProductModel): Product => {
+export const productMapper = (productModel: ProductModel): IProduct => {
   return {
     name: productModel.name,
     image: productModel.image,

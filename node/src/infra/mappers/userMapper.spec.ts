@@ -1,4 +1,4 @@
-import { UserEntity } from "../schema/user.schema";
+import { UserEntity } from "../repositories/schema/user.schema";
 import { userMapper } from "./user.mapper";
 
 describe("userMapper unit test", () => {

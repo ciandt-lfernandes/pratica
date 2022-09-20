@@ -1,7 +1,7 @@
 import { Router } from "express";
-import { ILogin } from "../domain/interfaces/login";
-import { autenthicate } from "../domain/login.usecase";
-import { getUserByEmail } from "../infra/repositories/user.repository";
+import { ILogin } from "./login.request";
+import { autenthicate } from "../../domain/user/autenthicate.usecase";
+import { getUserByEmail } from "../../infra/repositories/user.repository";
 
 const route = Router();
 

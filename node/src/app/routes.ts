@@ -1,12 +1,10 @@
 import { Router } from "express";
-import { helloWorld } from "./helloWorld";
-import { login } from "./login";
-import { product } from "./products/product";
+import { login } from "./login/login.controller";
+import { product } from "./products/product.controller";
 
 const routes = Router();
 
 routes.use(login);
-routes.use(helloWorld);
 routes.use(product);
 
 export { routes };

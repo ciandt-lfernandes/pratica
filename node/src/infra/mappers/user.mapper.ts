@@ -1,5 +1,5 @@
 import { UserModel } from "../interfaces/user.model";
-import { UserEntity } from "../schema/user.schema";
+import { UserEntity } from "../repositories/schema/user.schema";
 
 const userMapper = (user: UserEntity): UserModel => {
   return {

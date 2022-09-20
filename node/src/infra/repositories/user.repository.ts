@@ -1,8 +1,8 @@
-import { GetUserByEmail } from "../../domain/interfaces/gateways/user.gateway";
+import { GetUserByEmail } from "../../domain/user/user.gateway";
 import { connectMongo } from "../connect.mongoose";
 import { userMapper } from "../mappers/user.mapper";
 
-const userModel = require("../schema/user.schema");
+const userModel = require("./schema/user.schema");
 connectMongo();
 
 export const getUserByEmail: GetUserByEmail = async (emailParameter) => {

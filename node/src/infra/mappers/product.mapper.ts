@@ -1,5 +1,5 @@
 import { ProductModel } from "../interfaces/product.model";
-import { ProductEntity } from "../schema/product.schema";
+import { ProductEntity } from "../repositories/schema/product.schema";
 
 const productMapper = (product: ProductEntity): ProductModel => {
   return {

@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { allProducts } from "../../domain/getAllProducts.usecase";
+import { allProducts } from "../../domain/product/getAllProducts.usecase";
 import { getAllProductsRepository } from "../../infra/repositories/product.repository";
 
 const product = Router();
