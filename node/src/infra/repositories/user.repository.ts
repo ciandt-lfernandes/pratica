@@ -1,6 +1,6 @@
 import { GetUserByEmail } from "../../domain/user/user.gateway";
-import { connectMongo } from "./connect.mongoose";
 import { userMapper } from "../mappers/user.mapper";
+import { connectMongo } from "./connect.mongoose";
 
 const userModel = require("./schema/user.schema");
 connectMongo();
@@ -8,7 +8,7 @@ connectMongo();
 export const getUserByEmail: GetUserByEmail = async (emailParameter) => {
   try {
     const result = await userModel.findOne({ email: emailParameter });
-    return result ? userMapper(result) : null;
+    return userMapper(result);
   } catch (error) {
     console.log(error);
   }
