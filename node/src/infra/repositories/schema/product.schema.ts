@@ -5,13 +5,15 @@ export interface ProductEntity {
   name: string;
   image: string;
   price: number;
+  amount: number;
 }
 
 let productSchema = new Schema({
   _id: String,
   name: String,
   image: String,
-  prince: Number,
+  price: Number,
+  amount: Number,
 });
 
 module.exports = model("productModel", productSchema, "product");

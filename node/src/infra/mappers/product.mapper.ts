@@ -6,6 +6,7 @@ const productMapper = (product: ProductEntity): ProductModel => {
     return {
       id: product._id,
       name: product.name,
+      amount: product.amount,
       image: product.image,
       price: product.price,
     };

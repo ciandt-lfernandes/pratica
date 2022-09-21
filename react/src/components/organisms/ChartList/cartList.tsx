@@ -17,7 +17,7 @@ export const CartList = () => {
   return (
     <CartListContainer>
       {cart.map((p) => (
-        <Box width="30">
+        <Box width="auto">
           <Product product={p} />
           <Button value={"-"} onClick={() => handleClick(p)} />
         </Box>

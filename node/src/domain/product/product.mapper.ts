@@ -6,6 +6,7 @@ export const productMapper = (productModel: ProductModel): IProduct => {
     id: productModel.id,
     name: productModel.name,
     image: productModel.image,
+    amount: productModel.amount,
     price: productModel.price,
   };
 };

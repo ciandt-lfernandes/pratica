@@ -22,7 +22,7 @@ export const ProductList = () => {
   return (
     <ProductListContainer>
       {products.map((p) => (
-        <Box width="30" key={p.name}>
+        <Box width="auto" key={p.name}>
           <Product product={p} />
           <Button value="+" onClick={() => addToCart(p)} />
         </Box>
