@@ -14,10 +14,10 @@ Given("a valid user", () => {
     password: "1234",
   };
 });
-When("a user want login", () => {
+When("a user login", () => {
   login(user);
 });
-When("a user want logout", () => {
+When("a user logout", () => {
   logout();
 });
 Then("a user login successfully", () => {
