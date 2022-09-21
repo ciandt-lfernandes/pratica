@@ -1,9 +1,9 @@
 import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import LoginContext from "../../contexts/Login/login.context";
 import { Box } from "../../components/atoms/Box/Box";
 import { Button } from "../../components/atoms/Button/Button";
 import { Textbox } from "../../components/atoms/Textbox/Textbox";
+import LoginContext from "../../contexts/Login/login.context";
 import { loginService } from "../../services/login.service";
 import { LoginContainer } from "./styles";
 import "./styles.ts";
@@ -42,7 +42,13 @@ export const Login = () => {
             handleChange={(e) => setPassword(e.target.value)}
             value={password}
           />
-          <Button width={"100"} value="Signin" onClick={handleClick} />
+          <Button
+            id="signin"
+            width={"100"}
+            data-testid="signin"
+            value="Signin"
+            onClick={handleClick}
+          />
         </form>
       </Box>
     </LoginContainer>

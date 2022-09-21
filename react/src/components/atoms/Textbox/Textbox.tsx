@@ -2,7 +2,7 @@ import { InputStyled, TextBoxContainer } from "./styles";
 import "./styles.ts";
 
 interface ITextbox {
-  id: string;
+  id?: string;
   label?: string;
   placeholder?: string;
   value?: string;
