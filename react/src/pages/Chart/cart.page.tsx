@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router";
 import { Button } from "../../components/atoms/Button/Button";
 import { Header } from "../../components/molecules/Header/header";
-import { CartList } from "../../components/organisms/ChartList/cartList";
+import { CartList } from "../../components/organisms/CartList/cartList";
 import { CartContainer } from "./styles";
 
 export const Cart = () => {

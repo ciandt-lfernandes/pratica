@@ -1,32 +1,33 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext } from "react";
 import CartContext from "../../../contexts/Cart/cart.context";
+import ProductContext from "../../../contexts/Product/product.context";
 import { ProductDomain } from "../../../domain/product";
-import { listAllproducts } from "../../../services/products/listAllProducts.service";
 import { Box } from "../../atoms/Box/Box";
 import { Button } from "../../atoms/Button/Button";
 import { Product } from "../../molecules/Produto/product";
 import { ProductListContainer } from "./styles";
 
 export const ProductList = () => {
-  const [products, setProducts] = useState<ProductDomain[]>([]);
   const { addToCart } = useContext(CartContext);
+  const { getProducts, getProductFromAmount } = useContext(ProductContext);
+  const products = getProducts();
 
-  const loadProducts = async () => {
-    setProducts(await listAllproducts());
+  const handleClick = (product: ProductDomain) => {
+    getProductFromAmount(product.id);
+    addToCart(product);
   };
-
-  useEffect(() => {
-    loadProducts();
-  }, []);
 
   return (
     <ProductListContainer>
-      {products.map((p) => (
-        <Box width="auto" key={p.name}>
-          <Product product={p} />
-          <Button value="+" onClick={() => addToCart(p)} />
-        </Box>
-      ))}
+      {products
+        .filter((p) => p.amount )
+        .map((p) => (
+          <Box width="auto" key={p.name}>
+            <Product product={p} />
+            <h4>Qtd: {p.amount}</h4>
+            <Button value="+" onClick={() => handleClick(p)} />
+          </Box>
+        ))}
     </ProductListContainer>
   );
 };

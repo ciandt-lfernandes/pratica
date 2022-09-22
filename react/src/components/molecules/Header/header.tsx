@@ -20,7 +20,7 @@ export const Header = () => {
   return (
     <HeaderContainer>
       <h3>{user ? `Bem vindo ${user.name}` : ""}</h3>
-      <h3>{cart ? `Carrinho ${cart.length}` : ""}</h3>
+      <h3>{cart ? `Carrinho: ${cart.items ? cart.items.length : 0}` : ""}</h3>
       <Button
         id="logout"
         value="logout"

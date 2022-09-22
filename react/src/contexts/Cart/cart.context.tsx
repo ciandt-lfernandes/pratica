@@ -1,26 +1,46 @@
+import { remove } from "lodash";
 import { createContext, useState } from "react";
-import { v4 as uuidv4 } from "uuid";
-import { ProductCart } from "../../domain/product";
+import { Cart } from "../../domain/cart";
+import { ProductCart, ProductDomain } from "../../domain/product";
 
 export interface Context {
   addToCart: (product: ProductCart) => void;
   removeFromCart: (product: ProductCart) => void;
-  getCart: () => ProductCart[];
+  getCart: () => Cart;
 }
 const CartContext = createContext<Context>({} as Context);
 
 export const CartProvider = ({ children }: any) => {
-  const [cart, setCart] = useState<ProductCart[]>([]);
+  const [cart, setCart] = useState<Cart>({} as Cart);
 
-  const addToCart = (product: ProductCart) => {
-    setCart([...cart, { ...product, idCart: uuidv4() }]);
+  const addToCart = (product: ProductDomain) => {
+    if (!cart.items) {
+      setCart({ items: [{ product, amount: 1 }] });
+    } else {
+      const productCart = cart.items.find((i) => i.product.id === product.id);
+      if (productCart) {
+        productCart.amount++;
+      } else {
+        cart.items.push({
+          product: product,
+          amount: 1,
+        });
+      }
+      setCart({ ...cart });
+    }
   };
 
-  const removeFromCart = (product: ProductCart) =>
-    setCart(cart.filter((p) => p.idCart !== product.idCart));
+  const removeFromCart = (product: ProductCart) => {
+    const productCart = cart.items.find((i) => i.product.id === product.id);
+    if (productCart) {
+      productCart.amount--;
+      remove(cart.items, (i) => i.amount === 0);
+    }
+    setCart({ ...cart });
+  };
 
   const getCart = () => {
-    return cart;
+    return { ...cart };
   };
 
   return (
